@@ -58,8 +58,6 @@ int16_t SENSORS_getMoistureValue (void)
 {
     int32_t moisture;
     
-    //test
-    moisture = 32;
-    return moisture;
+    //TODO: complete function
     
 }
