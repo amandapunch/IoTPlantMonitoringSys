@@ -30,5 +30,5 @@
 
 uint16_t SENSORS_getLightValue(void);
 int16_t SENSORS_getTempValue (void);
-
+int16_t SENSORS_getMoistureValue (void);
 #endif /* SENSORS_HANDLING_H*/
