@@ -59,8 +59,7 @@ void sendToCloud(void)
    int rawTemperature = SENSORS_getTempValue();
    int light = SENSORS_getLightValue();
    int moisture = SENSORS_getMoistureValue();
-   
-   int len = sprintf(json, "{\"Moisture\":%d,\"Temp\":\"%d.%02d\"}", moisture,rawTemperature/100,abs(rawTemperature)%100, );
+   int len = sprintf(json, "{\"Light\":%d,\"Moisture\":%d,\"Temp\":\"%d.%02d\"}", light,moisture,rawTemperature/100,abs(rawTemperature)%100);
 
    if (len >0) {
       CLOUD_publishData((uint8_t*)json, len);
@@ -72,7 +71,7 @@ void sendToCloud(void)
 int main(void)
 {
    application_init();
-
+   
    while (1)
    { 
       runScheduler();  
