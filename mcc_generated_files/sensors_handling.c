@@ -33,8 +33,10 @@
 #define MCP9809_ADDR				0x18 
 #define MCP9808_REG_TA				0x05
 #define LIGHT_SENSOR_ADC_CHANNEL	5
+#define MOISTURE_SENSOR_ADC_CHANNEL 7
+#define MOISTURE_SENSOR_ADDR        0x0477
 
-uint16_t SENSORS_getLightValue(void)
+uint16_t SENSORS_getLightValue (void)
 {
     return ADC0_GetConversion(LIGHT_SENSOR_ADC_CHANNEL);
 }
@@ -56,8 +58,5 @@ int16_t SENSORS_getTempValue (void)
 
 int16_t SENSORS_getMoistureValue (void)
 {
-    int32_t moisture;
-    
-    //TODO: complete function
-    
+   return ADC0_GetConversion(MOISTURE_SENSOR_ADC_CHANNEL);  
 }
